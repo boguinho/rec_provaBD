@@ -1,0 +1,47 @@
+drop database pizzaria;
+
+create database pizzaria;
+
+use pizzaria;
+
+create table prato(
+	id int not null primary key,
+    nome varchar(100) not null,
+    descricao varchar(100),
+    preco int not null
+);
+
+create table clientes(
+	id int not null primary key,
+    nome varchar(100) not null,
+    telefone int not null,
+    email varchar(100) not null
+);
+
+create table pedido(
+	id int not null primary key,
+    cliente_id varchar(100) not null,
+    data_pedido varchar(100) not null,
+    disponivel varchar(100) not null
+);
+
+create table item_pedido(
+	id int not null primary key,
+    pedido_id varchar(100) not null,
+    prato_id varchar(100) not null,
+    quantidade varchar(100) not null
+);
+
+create table mesa(
+	id int not null primary key,
+    numero int not null,
+    capacidade varchar(100) not null
+);
+
+insert into prato (nome, descricao, preco)values('Pizza Margherita', 'Pizza com tomate manjericão e mussarela', '40.00');
+
+select * from prato;
+
+insert into clientes (nome, telefone, email)values('João', 123456789, 'joao@example.com');
+
+select *from clientes; 
